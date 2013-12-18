@@ -10,7 +10,7 @@ public class Login extends JFrame implements ActionListener
 	JLabel label1=new JLabel("欢迎登陆汽车管理系统");
 	JLabel label2=new JLabel("Aname:");
 	JLabel label3=new JLabel("Apassword:");
-	JLabel label4=new JLabel("Uname");//
+	JLabel label4=new JLabel("Uname");
 	JLabel label5=new JLabel("Upassword");
 	JButton button1=new JButton("管理员登陆");
 	JButton button2=new JButton("用户注册");

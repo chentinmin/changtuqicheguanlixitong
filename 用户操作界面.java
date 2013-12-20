@@ -95,20 +95,20 @@ public class 用户操作界面 extends JFrame implements ActionListener{
 		{
 			
 			订票1();
-			JOptionPane.showMessageDialog(null,"连接成功：123");
+			//JOptionPane.showMessageDialog(null,"连接成功：123");
 		}
 		
 		if(e.getSource()==jbn21)
 		{
 			
 			订票2();
-			JOptionPane.showMessageDialog(null,"连接成功：123");
+			//JOptionPane.showMessageDialog(null,"连接成功：123");
 		}
 		if(e.getSource()==jbn12)
 		{
 			
 			退票2();
-			JOptionPane.showMessageDialog(null,"连接成功：123");
+			//JOptionPane.showMessageDialog(null,"连接成功：123");
 		}
 		
 	}
@@ -161,7 +161,7 @@ public class 用户操作界面 extends JFrame implements ActionListener{
 			String asd=null;
 		
 		
-			JOptionPane.showMessageDialog(null,"马上开始查询数据库：");
+			//JOptionPane.showMessageDialog(null,"马上开始查询数据库：");
 			String sdd="select * from 路线表";
 			ResultSet rs=s.executeQuery(sdd);
 			
@@ -185,7 +185,7 @@ public class 用户操作界面 extends JFrame implements ActionListener{
 				//boolean bh2=false;      //用来验证输入的起点和终点在数据库中是否已经存在，false表示不存在
 				while(rs1.next())
 				{
-					JOptionPane.showMessageDialog(null,"开始查找汽车表！"+asd+rs1.getString("路线编号").trim().equals(asd)+rs1.getString("路线编号").trim());
+					//JOptionPane.showMessageDialog(null,"开始查找汽车表！"+asd+rs1.getString("路线编号").trim().equals(asd)+rs1.getString("路线编号").trim());
 					if(rs1.getString("路线编号").trim().equals(asd))
 					{
 						String haha="汽车编号          "+"路线编号          "+"发车时间          "+"最大容量          "+"剩余容量           "+"价格";
@@ -263,7 +263,7 @@ public class 用户操作界面 extends JFrame implements ActionListener{
 	
 	public void 订票1()
 	{
-		JOptionPane.showMessageDialog(null,"连接成功：123444");
+		//JOptionPane.showMessageDialog(null,"连接成功：123444");
 
 		String JDriver="com.microsoft.sqlserver.jdbc.SQLServerDriver";
 		String url="jdbc:sqlserver://localhost:1433;DatabaseName=长途汽车管理系统数据库";
@@ -276,7 +276,7 @@ public class 用户操作界面 extends JFrame implements ActionListener{
 		} 
 		try {
 			Connection con=DriverManager.getConnection(url,"admin","1");   //连接
-			JOptionPane.showMessageDialog(null,"连接成功：");
+			//JOptionPane.showMessageDialog(null,"连接成功：");
 			Statement s=con.createStatement();
 			String yy1=txt11.getText().trim();
 			String yy2=txt21.getText().trim();
@@ -286,7 +286,7 @@ public class 用户操作界面 extends JFrame implements ActionListener{
 			String asd=null;
 		
 		
-			JOptionPane.showMessageDialog(null,"马上开始查询数据库：");
+			//JOptionPane.showMessageDialog(null,"马上开始查询数据库：");
 			String sdd="select * from 路线表";
 			ResultSet rs=s.executeQuery(sdd);
 			
@@ -313,7 +313,7 @@ public class 用户操作界面 extends JFrame implements ActionListener{
 				tx2.append(haha+"\n");
 				while(rs1.next())
 				{
-					JOptionPane.showMessageDialog(null,"开始查找汽车表！"+asd+rs1.getString("路线编号").trim().equals(asd)+rs1.getString("路线编号").trim());
+				//	JOptionPane.showMessageDialog(null,"开始查找汽车表！"+asd+rs1.getString("路线编号").trim().equals(asd)+rs1.getString("路线编号").trim());
 					if(rs1.getString("路线编号").trim().equals(asd))
 					{
 						String haha1=rs1.getString("汽车编号").trim()+"          "+rs1.getString("路线编号").trim()+"          "
@@ -323,7 +323,7 @@ public class 用户操作界面 extends JFrame implements ActionListener{
 					}
 				}
 			}
-			JOptionPane.showMessageDialog(null,"添加成功！");
+			//JOptionPane.showMessageDialog(null,"添加成功！");
 			    s.close();
 			    con.close();      //关闭与数据库相关的连接
 				  txt11.setText(null);
@@ -349,7 +349,7 @@ public class 用户操作界面 extends JFrame implements ActionListener{
 		}  
 		try {
 			Connection con=DriverManager.getConnection(url,"admin","1");   //连接
-			JOptionPane.showMessageDialog(null,"连接成功：");
+			//JOptionPane.showMessageDialog(null,"连接成功：");
 			Statement s=con.createStatement();
 			 String aqq1=txt31.getText().trim();
 			 String aqq2="'"+aqq1+"'";
@@ -358,7 +358,7 @@ public class 用户操作界面 extends JFrame implements ActionListener{
 			boolean bh0=false;      //用来验证输入的起点和终点在数据库中是否已经存在，false表示不存在
 			while(rs0.next())//查看当前有多少个用户初始值为0
 			{
-				JOptionPane.showMessageDialog(null,"有这个车");
+				//JOptionPane.showMessageDialog(null,"有这个车");
 				int qq1=rs0.getInt("剩余容量");
 				if(qq1>0)
 				{
@@ -372,7 +372,7 @@ public class 用户操作界面 extends JFrame implements ActionListener{
 			
 			if(bh0)
 			{
-			JOptionPane.showMessageDialog(null,"马上开始查询数据库：");
+			//JOptionPane.showMessageDialog(null,"马上开始查询数据库：");
 			String sdd="select * from 订票表";
 			ResultSet rs=s.executeQuery(sdd);
 			int aas=0;
@@ -387,15 +387,15 @@ public class 用户操作界面 extends JFrame implements ActionListener{
 			String str2="'"+aq1+"'";
 			String str3="'"+name+"'";
 			String str4="'"+"否"+"'";
-			JOptionPane.showMessageDialog(null,"订票成功！1238");
+			//JOptionPane.showMessageDialog(null,"订票成功！1238");
 			String stt="insert into 订票表 values("+str1+","+str2+","+str3+","+str4+")";
 			s.executeUpdate(stt);
-			JOptionPane.showMessageDialog(null,"订票成功！4444");
-			JOptionPane.showMessageDialog(null,"开始修改汽车表：");
+			JOptionPane.showMessageDialog(null,"订票成功!");
+			//JOptionPane.showMessageDialog(null,"开始修改汽车表：");
 			String sc=String.valueOf(ll);
 			String stt1="UPDATE 汽车表 SET 剩余容量="+sc+" where 汽车编号="+aqq2;
 			s.executeUpdate(stt1);
-			JOptionPane.showMessageDialog(null,"修改成功！4444");
+			//JOptionPane.showMessageDialog(null,"修改成功！4444");
 			    s.close();
 			    con.close();      //关闭与数据库相关的连接
 			    退票1();
@@ -483,7 +483,7 @@ public class 用户操作界面 extends JFrame implements ActionListener{
 	public void 退票2()
 	{
 		String aqq2=null;
-		JOptionPane.showMessageDialog(null,"连接成功：123444");
+		//JOptionPane.showMessageDialog(null,"连接成功：123444");
 
 		String JDriver="com.microsoft.sqlserver.jdbc.SQLServerDriver";
 		String url="jdbc:sqlserver://localhost:1433;DatabaseName=长途汽车管理系统数据库";
